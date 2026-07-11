@@ -71,9 +71,21 @@ const WHY = [
 ];
 
 const PORTFOLIO = [
-  { label: "Restaurant & Café Sites", note: "Sample layout" },
-  { label: "Retail & Boutique Sites", note: "Sample layout" },
-  { label: "Service Business Sites", note: "Sample layout" },
+  {
+    label: "Restaurant & Café Sites",
+    note: "Sample layout",
+    img: "https://images.unsplash.com/photo-1564486054178-d8de60bd3071?w=800&q=75&auto=format&fit=crop",
+  },
+  {
+    label: "Retail & Boutique Sites",
+    note: "Sample layout",
+    img: "https://images.unsplash.com/photo-1556740767-414a9c4860c1?w=800&q=75&auto=format&fit=crop",
+  },
+  {
+    label: "Service Business Sites",
+    note: "Sample layout",
+    img: "https://images.unsplash.com/photo-1573164713988-8665fc963095?w=800&q=75&auto=format&fit=crop",
+  },
 ];
 
 export default function Home() {
@@ -247,18 +259,15 @@ export default function Home() {
                     <span className={styles.browserDot} />
                     <span className={styles.browserDot} />
                   </div>
-                  <div
-                    className={styles.browserScreen}
-                    style={{
-                      background:
-                        i === 0
-                          ? "linear-gradient(135deg,#122a52,#3b74f0)"
-                          : i === 1
-                          ? "linear-gradient(135deg,#0b1c39,#1b3766)"
-                          : "linear-gradient(135deg,#c9860f,#0b1c39)",
-                    }}
-                  >
-                    Coming Soon
+                  <div className={styles.browserScreen}>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={p.img}
+                      alt={p.label}
+                      className={styles.browserImg}
+                      loading="lazy"
+                    />
+                    <span className={styles.browserBadge}>Sample Style</span>
                   </div>
                   <div className={styles.portCaption}>
                     <b>{p.label}</b>
